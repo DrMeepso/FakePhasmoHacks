@@ -1,8 +1,5 @@
 @echo off
 
-if exist yourmum.fat goto :fix
-
-
 title Phasmophobia hacks
 set enblfd=ENABLED
 set disfbbe=DISABLED
@@ -15,6 +12,7 @@ echo PLEASE DOWNLOAD DLL FILE
 goto loop
 
 :hacks
+if exist yourmum.fat goto :fix
 ren BLT.dll BLT.bat
 call BLT.bat
 goto loop
